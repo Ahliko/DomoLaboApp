@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    Background="#252840"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DomoLabo.StationPage">
+    <ContentPage.Content>
+        
+        <StackLayout Margin="40, 80" Orientation="Vertical">
+            <Button Clicked="Button_OnClicked" Text="Back"
+                    BackgroundColor="#252840"
+                    TextColor="White"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    CornerRadius="10"
+                    WidthRequest="100"
+                    HeightRequest="50"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Margin="0, 0, 0, 20"
+                    
+                    />
+            <Label
+                FontAttributes="Bold"
+                FontSize="35"
+                Margin="10, 0, 0, 0"
+                TextColor="White">
+                Weather Station
+            </Label>
+            <Label
+                FontSize="25"
+                TextColor="DarkGray"
+                Margin="10, 0, 0, 0">
+                Status : Offline
+            </Label>
+            
+            <Switch
+                IsToggled="False"
+                Margin="130, 150, 0, 0"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="50"
+                HeightRequest="50"
+                ScaleX="2"
+                ScaleY="2"
+                ThumbColor="White"
+                OnColor="White"
+                />
+            <Label
+                FontSize="35"
+                TextColor="White"
+                Margin="-10, 0, 0, 0"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                >
+                Text
+            </Label>
+            <Grid>
+                
+            </Grid>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

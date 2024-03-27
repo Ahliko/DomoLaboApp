@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentView
+    x:Class="DomoLabo.HUBConnectTemplate.FourStepTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackLayout
+            Grid.Row="0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Frame
+                BackgroundColor="Blue"
+                CornerRadius="150"
+                HeightRequest="180"
+                WidthRequest="180" />
+        </StackLayout>
+        <StackLayout Grid.Row="1" VerticalOptions="End">
+            <Label
+                FontAttributes="Bold"
+                FontSize="20"
+                Grid.Row="0"
+                HorizontalTextAlignment="Center"
+                TextColor="White">
+                Connexion au HUB
+            </Label>
+            <Label
+                HorizontalTextAlignment="Center"
+                Margin="0,5,0,20"
+                TextColor="LightGray">
+                Appuyer sur le bouton du HUB auquel vous souhaitez vous connecter.
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>

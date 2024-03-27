@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856367495905",
+    "project_id": "domolabo-9657f",
+    "storage_bucket": "domolabo-9657f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856367495905:android:00f02f1f3db9586e2095a0",
+        "android_client_info": {
+          "package_name": "com.companyname.DomoLabo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmxt2idhCx5Ye5zPsdSc1saBfO3MFlVuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
