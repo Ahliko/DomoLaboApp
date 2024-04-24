@@ -43,9 +43,13 @@ namespace DomoLabo.Droid
                 //Request for location permissions based on your actual needs
                 mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
                 mPermissionList.Add(Manifest.Permission.AccessFineLocation);
+                mPermissionList.Add(Manifest.Permission.ChangeWifiState);
+                mPermissionList.Add(Manifest.Permission.AccessWifiState);
             }
             else
             {
+                mPermissionList.Add(Manifest.Permission.ChangeWifiState);
+                mPermissionList.Add(Manifest.Permission.AccessWifiState);
                 mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
                 mPermissionList.Add(Manifest.Permission.AccessFineLocation);
             }

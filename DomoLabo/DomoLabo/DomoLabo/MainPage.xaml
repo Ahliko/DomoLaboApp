@@ -9,204 +9,58 @@
     <ContentPage.Resources />
 
     <StackLayout>
+        <Grid Padding="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+
+            </Grid.ColumnDefinitions>
+            <Label FontAttributes="Bold" TextColor="White">Domolabo</Label>
+            <ImageButton
+                Clicked="paramsPage"
+                Grid.Column="1"
+                Source="Add" />
+        </Grid>
         <StackLayout Margin="40,80">
-            <Label FontSize="18" TextColor="DarkGray">Welcome</Label>
             <Label
                 FontAttributes="Bold"
                 FontSize="30"
-                Margin="0"
-                TextColor="White">
-                Username
-            </Label>
-            <Label
-                FontAttributes="Bold"
-                FontSize="10"
-                TextColor="DarkGray">
-                100 devices connected
-            </Label>
-        </StackLayout>
-        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-            <Label
-                FontAttributes="Bold"
                 TextColor="White"
                 x:Name="Header" />
-
-        </StackLayout>
-        <StackLayout Margin="25,5">
             <Label
                 FontAttributes="Bold"
                 FontSize="12"
                 TextColor="DarkGray">
-                Favorite devices
+                1 objet dans la pièce
             </Label>
-            <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout Orientation="Horizontal">
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="AddObj" />
-                        </StackLayout.GestureRecognizers>
-                        <Frame
-                            Background="#3B3D51"
-                            CornerRadius="10"
-                            HeightRequest="65"
-                            Margin="2"
-                            Padding="10"
-                            WidthRequest="138">
-                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                <StackLayout VerticalOptions="Center" WidthRequest="30">
-                                    <Image Source="add.png" />
-                                </StackLayout>
-                            </StackLayout>
-                        </Frame>
-
-                        <StackLayout x:Name="test" />
-
-                    </StackLayout>
-                </StackLayout>
-            </ScrollView>
         </StackLayout>
-
-
         <StackLayout Margin="25,5">
-            <Label
-                FontAttributes="Bold"
-                FontSize="12"
-                TextColor="DarkGray">
-                Devices groups
-            </Label>
-            <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal">
+            <StackLayout
+                Margin="0,0,0,10"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <StackLayout
+                    HorizontalOptions="StartAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        TextColor="White">
+                        Vos objets connectés
+                    </Label>
+                </StackLayout>
+                <ImageButton
+                    BackgroundColor="Transparent"
+                    Clicked="showPopup"
+                    Source="add"
+                    WidthRequest="30" />
+            </StackLayout>
+            <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
-                    <Frame
-                        Background="#3B3D51"
-                        CornerRadius="10"
-                        HeightRequest="160"
-                        Margin="2"
-                        Padding="10"
-                        WidthRequest="138">
-                        <Grid>
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="StartTest" />
-                            </Grid.GestureRecognizers>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0" Margin="10">
-                                    <Label
-                                        FontAttributes="Bold"
-                                        FontSize="12"
-                                        TextColor="White">
-                                        Name
-                                    </Label>
-                                    <Label FontSize="8" TextColor="White">Contains</Label>
-                                </StackLayout>
-                            </Grid>
-                        </Grid>
-                    </Frame>
-                    <Frame
-                        Background="#3B3D51"
-                        CornerRadius="10"
-                        HeightRequest="160"
-                        Margin="2"
-                        Padding="10"
-                        WidthRequest="138">
-                        <Grid>
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="StopTest" />
-                            </Grid.GestureRecognizers>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0" Margin="10">
-                                    <Label
-                                        FontAttributes="Bold"
-                                        FontSize="12"
-                                        TextColor="White">
-                                        Name
-                                    </Label>
-                                    <Label FontSize="8" TextColor="White">Contains</Label>
-                                </StackLayout>
-                            </Grid>
-                        </Grid>
-                    </Frame>
-                    <Frame
-                        Background="#3B3D51"
-                        CornerRadius="10"
-                        HeightRequest="160"
-                        Margin="2"
-                        Padding="10"
-                        WidthRequest="138">
-                        <Grid>
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
-                            </Grid.GestureRecognizers>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0" Margin="10">
-                                    <Label
-                                        FontAttributes="Bold"
-                                        FontSize="12"
-                                        TextColor="White">
-                                        Name
-                                    </Label>
-                                    <Label FontSize="8" TextColor="White">Contains</Label>
-                                </StackLayout>
-                            </Grid>
-                        </Grid>
-                    </Frame>
-                    <Frame
-                        Background="#3B3D51"
-                        CornerRadius="10"
-                        HeightRequest="160"
-                        Margin="2"
-                        Padding="10"
-                        WidthRequest="138">
-                        <Grid>
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ObjectChangeState" />
-                            </Grid.GestureRecognizers>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <StackLayout Grid.Column="0" Margin="10">
-                                    <Label
-                                        FontAttributes="Bold"
-                                        FontSize="12"
-                                        TextColor="White">
-                                        Name
-                                    </Label>
-                                    <Label FontSize="8" TextColor="White">Contains</Label>
-                                </StackLayout>
-                            </Grid>
-                        </Grid>
-                    </Frame>
+                    <StackLayout x:Name="test" />
                 </StackLayout>
             </ScrollView>
-
         </StackLayout>
     </StackLayout>
 

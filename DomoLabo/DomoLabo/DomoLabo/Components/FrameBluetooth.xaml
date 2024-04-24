@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ViewCell
+    x:Class="DomoLabo.Components.FrameBluetooth"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid Background="#3B3D51" Padding="10">
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ConnectDevice" />
+        </Grid.GestureRecognizers>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" VerticalOptions="Center">
+            <Label TextColor="White" x:Name="DeviceName">Device Name</Label>
+        </StackLayout>
+        <ImageButton
+            Grid.Column="1"
+            Grid.Row="0"
+            HeightRequest="30"
+            Source="ventilateur"
+            WidthRequest="30"
+            x:Name="WifiState" />
+    </Grid>
+</ViewCell>

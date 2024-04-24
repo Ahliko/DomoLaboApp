@@ -5,7 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using DomoLabo.Components;
 using DomoLabo.DataClass;
+using DomoLabo.Page;
+using Plugin.BLE.Abstractions.Contracts;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
@@ -23,9 +26,16 @@ namespace DomoLabo
             
             MessagingCenter.Subscribe<ObjectListWidget, Objet>(this, "Hi", async (sender, arg) =>
             {
-                Navigation.PushAsync(new VentilationPage(arg));
+                StopTest();
+                //await Navigation.PushAsync(new VentilationPage(arg));
+            });
+            
+            MessagingCenter.Subscribe<BLE, String>(this, "addNewObject", async (sender, topic) =>
+            {
+                AddObj(topic);
             });
         }
+
         protected override void OnAppearing()
         {
             try
@@ -63,8 +73,8 @@ namespace DomoLabo
                         {
                             test.Children.Add(objects.getView());
                         }
-            
-                        
+
+
                     }
                     catch (Exception e)
                     {
@@ -78,33 +88,35 @@ namespace DomoLabo
                 Debug.WriteLine(e);
                 throw;
             }
-            
         }
 
-        private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void StationPage_OnTapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new StationPage());
-        }
 
         private void ObjectChangeState(object sender, EventArgs e)
         {
             /*MQTT.SendDataObject();*/
         }
 
-        private async void AddObj(object sender, EventArgs e)
+        private async void AddObj(string topic)
         {
-            /*BLE v = new BLE();
-            v.BLEConnection();*/
-            await MQTT.SendMessageToTopic(Request.Request.getRequest_ObjectAdd("12345"));
+            await MQTT.SendMessageToTopic(Request.Request.getRequest_ObjectAdd(topic));
         }
 
-        private void StopTest(object sender, EventArgs e)
+        private void showPopup(object sender, EventArgs e)
+        {
+            Navigation.ShowPopupAsync(new DevicesSelector());
+        }
+
+        private async void paramsPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ParamsPage());
+        }
+        
+        
+        
+        
+        
+        
+        private void StopTest()
         {
             MQTT.SendDataObject("0");
         }

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    Background="#252840"
+    x:Class="DomoLabo.VentilationPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <StackLayout Padding="20">
+                <Label FontAttributes="Bold" TextColor="White">Ventilateur</Label>
+            </StackLayout>
+            <StackLayout Margin="0,50,0,0">
+                <Image
+                    HeightRequest="150"
+                    Source="ventilateur"
+                    x:Name="Image" />
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

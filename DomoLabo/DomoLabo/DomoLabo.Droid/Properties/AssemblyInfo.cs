@@ -15,6 +15,8 @@ using Android.App;
 [assembly: AssemblyTrademark("CompanyTrademark")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessWifiState)]
+[assembly: UsesPermission(Android.Manifest.Permission.ChangeWifiState)]
 
 // Version information for an assembly consists of the following four values:
 //

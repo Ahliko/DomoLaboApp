@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Background="#252840"
+    x:Class="DomoLabo.Page.ParamsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20">
+                <ImageButton
+                    BackgroundColor="Transparent"
+                    HeightRequest="30"
+                    Source="Add"
+                    WidthRequest="30" />
+                <StackLayout VerticalOptions="Center">
+                    <Label FontAttributes="Bold" TextColor="White">Domolabo</Label>
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout Margin="25,5">
+                <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Vertical">
+                    <StackLayout>
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            Margin="0,10,0,10"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                TextColor="White">
+                                Vos réseaux enregistrés
+                            </Label>
+                        </StackLayout>
+                        <StackLayout x:Name="WifiList" />
+                        <StackLayout
+                            HorizontalOptions="StartAndExpand"
+                            Margin="0,10,0,10"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                TextColor="White">
+                                Vos réseaux disponible
+                            </Label>
+                        </StackLayout>
+                        <StackLayout x:Name="UnknowWifiList" />
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -104,7 +104,6 @@ namespace DomoLabo
 
         async public static Task SendDataObject(string value)
         {
-            Debug.WriteLine("send data");
             string broker = "test.mosquitto.org";
             int port = 1883;
             string clientId = Guid.NewGuid().ToString();
@@ -132,7 +131,6 @@ namespace DomoLabo
             {
                 Debug.WriteLine("Local |    Connected to MQTT broker successfully.");
 
-                // Subscribe to a topic
                 await ConnectToTopic(topicObjet);
 
                 mqttClient.ApplicationMessageReceivedAsync += e =>
