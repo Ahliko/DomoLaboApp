@@ -26,10 +26,6 @@
         <DependentUpon>ObjectListWidget.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Page\StationPage.xaml.cs">
-        <DependentUpon>StationPage.xaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
       <Compile Update="Page\VentilationPage.xaml.cs">
         <DependentUpon>VentilationPage.xaml</DependentUpon>
         <SubType>Code</SubType>

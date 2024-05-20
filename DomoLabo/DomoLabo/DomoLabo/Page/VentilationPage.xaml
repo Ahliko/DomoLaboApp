@@ -1,20 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    Background="#252840"
+    Background="#021919"
     x:Class="DomoLabo.VentilationPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
 
         <StackLayout>
-            <StackLayout Padding="20">
+            <StackLayout Orientation="Horizontal" Padding="20">
+                <StackLayout
+                    BackgroundColor="Red"
+                    HeightRequest="20"
+                    WidthRequest="20">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Button_OnClicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
                 <Label FontAttributes="Bold" TextColor="White">Ventilateur</Label>
             </StackLayout>
-            <StackLayout Margin="0,50,0,0">
-                <Image
-                    HeightRequest="150"
-                    Source="ventilateur"
-                    x:Name="Image" />
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,100"
+                    VerticalOptions="CenterAndExpand">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        HorizontalTextAlignment="Center"
+                        TextColor="White"
+                        x:Name="objName">
+                        Ventilateur
+                    </Label>
+                    <Label
+                        FontSize="18"
+                        HorizontalTextAlignment="Center"
+                        TextColor="White"
+                        x:Name="objValue">
+                        0%
+                    </Label>
+                    <StackLayout HorizontalOptions="Center" Margin="0,50,0,0">
+                        <Frame
+                            BackgroundColor="#042121"
+                            CornerRadius="20"
+                            Margin="0"
+                            Padding="0,0,0,0"
+                            WidthRequest="100"
+                            x:Name="sliderContainer">
+                            <AbsoluteLayout Padding="-15">
+
+
+                                <StackLayout
+                                    AbsoluteLayout.LayoutBounds="0.5,1"
+                                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                                    BackgroundColor="#00d67d"
+                                    HeightRequest="1"
+                                    WidthRequest="200"
+                                    x:Name="sliderVisualizer" />
+                                <Slider
+                                    AbsoluteLayout.LayoutBounds="0.5,0.5"
+                                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                                    HeightRequest="300"
+                                    Margin="0"
+                                    Maximum="100"
+                                    MaximumTrackColor="Transparent"
+                                    Minimum="0"
+                                    MinimumTrackColor="Transparent"
+                                    Rotation="-90"
+                                    ThumbColor="Transparent"
+                                    ValueChanged="SpeedChange"
+                                    WidthRequest="300" />
+                            </AbsoluteLayout>
+                        </Frame>
+                    </StackLayout>
+
+
+                    <Image
+                        HeightRequest="50"
+                        Margin="0,20,0,0"
+                        Source="ventilateur"
+                        x:Name="Image" />
+                </StackLayout>
             </StackLayout>
         </StackLayout>
 

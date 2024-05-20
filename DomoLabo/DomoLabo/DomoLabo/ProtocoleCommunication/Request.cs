@@ -69,6 +69,30 @@ public class Request
         });
     }
 
+    public static string getRequest_ModifyObjetData(string objTopic, string state, string value)
+    {
+        Debug.WriteLine(value);
+        return JsonSerializer.Serialize(new Dictionary<string, Dictionary<string, string>>()
+        {
+            {
+                "identity", identity
+            },
+            {
+                "content", new Dictionary<string, string>()
+                {
+                    { "type", "data" },
+                    { "topic", objTopic },
+                    { "data" , JsonSerializer.Serialize(new Dictionary<string,string>()
+                        {
+                            {"state", state},
+                            {"value",value},
+                        })
+                    },
+                }
+            }
+        });
+    }
+
     public static void processRequest(string rqt)
     {
         Dictionary<string, Dictionary<string, string>> r = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, string>>>(rqt);
@@ -99,23 +123,18 @@ public class Request
                         break;
                     case "add":
                         Debug.WriteLine("Add");
+                        if (r["content"]["response"] == "ok")
+                        {
+                            Debug.WriteLine("Ok");
+                            Dictionary<string, string> id = JsonSerializer.Deserialize<Dictionary<string, string>>(r["content"]["identity"]);
+                            Dictionary<string, string> data = JsonSerializer.Deserialize<Dictionary<string, string>>(r["content"]["data"]);
+                            Objet nObj = new Objet(id["name"], "1234", data["state"], data["value"]);
+                                    
+                            DataManager.Hubs[0].AddObject(nObj);
+                        }
                         break;
                     default:
                         break;
-                }
-                
-                if (r["content"]["what"] == "add")
-                {
-                    Debug.WriteLine("Ajout");
-                    if (r["content"]["response"] == "ok")
-                    {
-                        Debug.WriteLine("Ok");
-                        Dictionary<string, string> id =
-                            JsonSerializer.Deserialize<Dictionary<string, string>>(r["content"]["identity"]);
-                        Objet nObj = new Objet(id["name"], "1234", "0", "0");
-                                    
-                        DataManager.Hubs[0].AddObject(nObj);
-                    }
                 }
                 break;
             default:

@@ -14,8 +14,8 @@ namespace DomoLabo;
 
 public class BLE
 {
-    public List<IDevice> deviceList;
-    public void BLEConnection()
+    public static List<IDevice> deviceList;
+    public static void BLEConnection()
     {
         var ble = CrossBluetoothLE.Current;
         var adapter = CrossBluetoothLE.Current.Adapter;
@@ -35,7 +35,7 @@ public class BLE
         ScanDevi(adapter);
     }
 
-    private async void OnDeviceConnected(object sender, DeviceEventArgs args)
+    private static async void OnDeviceConnected(object sender, DeviceEventArgs args)
     {
         Debug.WriteLine("On Connected");
         try
@@ -60,8 +60,8 @@ public class BLE
 
                 await characteristicWifiName.WriteAsync(Encoding.ASCII.GetBytes("Manon"));
                 await characteristicWifiPassword.WriteAsync(Encoding.ASCII.GetBytes("oupslaco"));
-                //await MQTT.SendMessageToTopic(Request.Request.getRequest_ObjectAdd(Topic));
-                MessagingCenter.Send<BLE, String>(this, "addNewObject", Topic);
+                Debug.WriteLine("yop je veyx co ligne 63 dans ble");
+                MessagingCenter.Send<BLE, String>(new BLE(), "addNewObject", Topic);
             }
             else
             {
@@ -74,16 +74,24 @@ public class BLE
         }
     }
 
-    private void OnDeviceDiscovered(object sender, DeviceEventArgs args)
+    private static void OnDeviceDiscovered(object sender, DeviceEventArgs args)
     {
         if (args.Device.ToString() == null || args.Device.ToString().Split('|')[0] != "0df0032e")
             return;
         Debug.WriteLine(args.Device.ToString());
-        MessagingCenter.Send<BLE, IDevice>(this, "newDeviceFound", args.Device);
+        try
+        {
+            MessagingCenter.Send<BLE, IDevice>(new BLE(), "newDeviceFound", args.Device);
+        }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e);
+            throw;
+        }
         deviceList.Add(args.Device);
     }
 
-    private async void ScanDevi(IAdapter adapter)
+    private static async void ScanDevi(IAdapter adapter)
     {
         deviceList.Clear();
         await adapter.StartScanningForDevicesAsync();
@@ -97,7 +105,7 @@ public class BLE
         
     }
 
-    public async void Connect(IAdapter adapter, IDevice device)
+    public static async void Connect(IAdapter adapter, IDevice device)
     {
         Device.BeginInvokeOnMainThread(async () =>
         {

@@ -24,7 +24,6 @@ public partial class FrameBluetooth : ViewCell
 
     private void ConnectDevice(object sender, EventArgs e)
     {
-        BLE ble = new BLE();
-        ble.Connect(adapter:CrossBluetoothLE.Current.Adapter, device:this.device);
+        BLE.Connect(adapter:CrossBluetoothLE.Current.Adapter, device:this.device);
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    Background="#252840"
+    Background="#021919"
     x:Class="DomoLabo.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:dataClass="clr-namespace:DomoLabo.DataClass;assembly=DomoLabo"

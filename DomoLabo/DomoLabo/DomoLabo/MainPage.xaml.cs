@@ -19,21 +19,11 @@ namespace DomoLabo
     {
 
         private HUB currentHub;
+        private DateTime lastAdd = DateTime.Now;
         public MainPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            
-            MessagingCenter.Subscribe<ObjectListWidget, Objet>(this, "Hi", async (sender, arg) =>
-            {
-                StopTest();
-                //await Navigation.PushAsync(new VentilationPage(arg));
-            });
-            
-            MessagingCenter.Subscribe<BLE, String>(this, "addNewObject", async (sender, topic) =>
-            {
-                AddObj(topic);
-            });
         }
 
         protected override void OnAppearing()
@@ -46,6 +36,23 @@ namespace DomoLabo
                 }
                 else
                 {
+                    MessagingCenter.Subscribe<ObjectListWidget, Objet>(this, "Hi", async (sender, arg) =>
+                    {
+                        MessagingCenter.Unsubscribe<ObjectListWidget, Objet>(this, "Hi");
+                
+                        await Navigation.PushAsync(new VentilationPage(arg));
+                    });
+            
+                    MessagingCenter.Subscribe<BLE, String>(this, "addNewObject", async (sender, topic) =>
+                    {
+                        MessagingCenter.Unsubscribe<BLE, String>(this, "addNewObject");
+                        if (!((lastAdd - DateTime.Now).TotalSeconds <= -1)) return;
+                        lastAdd = DateTime.Now;
+                        AddObj(topic);
+                    });
+                    
+                    
+                    
                     currentHub = DataManager.Hubs[0];
                     currentHub.PropertyChanged += (sender, args) =>
                     {
@@ -109,21 +116,6 @@ namespace DomoLabo
         private async void paramsPage(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ParamsPage());
-        }
-        
-        
-        
-        
-        
-        
-        private void StopTest()
-        {
-            MQTT.SendDataObject("0");
-        }
-
-        private void StartTest(object sender, EventArgs e)
-        {
-            MQTT.SendDataObject("1");
         }
     }
 }

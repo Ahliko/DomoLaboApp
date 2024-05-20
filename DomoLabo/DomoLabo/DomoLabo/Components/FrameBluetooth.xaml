@@ -4,7 +4,7 @@
     x:Class="DomoLabo.Components.FrameBluetooth"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Grid Background="#3B3D51" Padding="10">
+    <Grid BackgroundColor="#042121" Padding="10">
         <Grid.GestureRecognizers>
             <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ConnectDevice" />
         </Grid.GestureRecognizers>

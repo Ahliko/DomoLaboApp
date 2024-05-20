@@ -33,9 +33,9 @@ public class Objet : INotifyPropertyChanged
             OnPropertyChanged("state");
         }
     }
-    public string _value { get; set; }
+    private string _value { get; set; }
 
-    private string value
+    public string value
     {
         get { return _value; }
         set

@@ -10,7 +10,7 @@
                 <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="DevelopObject" />
             </StackLayout.GestureRecognizers>
             <Frame
-                Background="#3B3D51"
+                Background="#042121"
                 CornerRadius="10"
                 HeightRequest="200"
                 Margin="2"

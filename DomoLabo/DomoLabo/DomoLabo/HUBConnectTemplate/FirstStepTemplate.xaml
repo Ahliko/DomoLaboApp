@@ -40,7 +40,7 @@
         </StackLayout>
         <StackLayout Grid.Row="2">
             <Button
-                BackgroundColor="#7f03fc"
+                BackgroundColor="#00d67d"
                 Clicked="NextStep"
                 CornerRadius="15"
                 FontAttributes="Bold"

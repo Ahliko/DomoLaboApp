@@ -31,11 +31,7 @@ public partial class DevicesSelector : Xamarin.CommunityToolkit.UI.Views.Popup
             Dismiss(true);
         });
         
+        BLE.BLEConnection();
         
-        
-        BLE bluetooth = new BLE(); 
-        bluetooth.BLEConnection();
-        
-        //bluetoothDevicesList.Children.Add(new Label{ Text = "Yop"});
     }
 }
