@@ -19,14 +19,14 @@
                 <StackLayout>
                     <StackLayout HeightRequest="20" WidthRequest="20">
                         <Frame
-                            BackgroundColor="Red"
+                            BackgroundColor="LimeGreen"
                             CornerRadius="10"
-                            HeightRequest="20"
+                            HeightRequest="10"
                             HorizontalOptions="Start"
                             Margin="0"
                             Padding="0"
                             VerticalOptions="Center"
-                            WidthRequest="20"
+                            WidthRequest="10"
                             x:Name="stateIndicator" />
                     </StackLayout>
 
@@ -47,7 +47,7 @@
                             FontSize="8"
                             Margin="0,-4"
                             TextColor="White">
-                            Offline
+                            Connecté
                         </Label>
                     </StackLayout>
                 </StackLayout>

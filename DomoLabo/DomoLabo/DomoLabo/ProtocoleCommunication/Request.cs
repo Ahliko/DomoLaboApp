@@ -128,7 +128,7 @@ public class Request
                             Debug.WriteLine("Ok");
                             Dictionary<string, string> id = JsonSerializer.Deserialize<Dictionary<string, string>>(r["content"]["identity"]);
                             Dictionary<string, string> data = JsonSerializer.Deserialize<Dictionary<string, string>>(r["content"]["data"]);
-                            Objet nObj = new Objet(id["name"], "1234", data["state"], data["value"]);
+                            Objet nObj = new Objet(id["name"], data["topic"], data["state"], data["value"]);
                                     
                             DataManager.Hubs[0].AddObject(nObj);
                         }

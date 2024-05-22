@@ -102,7 +102,7 @@ namespace DomoLabo
             DataManager.Hubs.Add(new HUB(request["identity"]["name"], HubObj, topicApp));
         }
 
-        async public static Task SendDataObject(string value)
+        /*async public static Task SendDataObject(string value)
         {
             string broker = "test.mosquitto.org";
             int port = 1883;
@@ -153,7 +153,7 @@ namespace DomoLabo
             {
                 Debug.WriteLine($"Local |    Failed to connect to MQTT broker: {connectResult.ResultCode}");
             }
-        }
+        }*/
         
         /*public static async Task AddObject(string objTopic)
         {

@@ -49,7 +49,7 @@ public class Objet : INotifyPropertyChanged
     {
         get
         {
-            return this.state == "0" ? Color.Red:Color.Green;
+            return this.state == "1" ? Color.Red:Color.Green;
         }
     }
 

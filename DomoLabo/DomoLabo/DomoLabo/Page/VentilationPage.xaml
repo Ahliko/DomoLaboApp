@@ -8,14 +8,14 @@
 
         <StackLayout>
             <StackLayout Orientation="Horizontal" Padding="20">
-                <StackLayout
-                    BackgroundColor="Red"
+                <Image
                     HeightRequest="20"
+                    Source="back.png"
                     WidthRequest="20">
-                    <StackLayout.GestureRecognizers>
+                    <Image.GestureRecognizers>
                         <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Button_OnClicked" />
-                    </StackLayout.GestureRecognizers>
-                </StackLayout>
+                    </Image.GestureRecognizers>
+                </Image>
                 <Label FontAttributes="Bold" TextColor="White">Ventilateur</Label>
             </StackLayout>
             <StackLayout VerticalOptions="FillAndExpand">
@@ -59,6 +59,7 @@
                                 <Slider
                                     AbsoluteLayout.LayoutBounds="0.5,0.5"
                                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                                    DragCompleted="SpeedChangeEnd"
                                     HeightRequest="300"
                                     Margin="0"
                                     Maximum="100"
@@ -68,7 +69,8 @@
                                     Rotation="-90"
                                     ThumbColor="Transparent"
                                     ValueChanged="SpeedChange"
-                                    WidthRequest="300" />
+                                    WidthRequest="300"
+                                    x:Name="sliderVentilo" />
                             </AbsoluteLayout>
                         </Frame>
                     </StackLayout>

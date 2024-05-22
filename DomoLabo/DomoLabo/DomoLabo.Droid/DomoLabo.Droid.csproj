@@ -72,6 +72,8 @@
     <ItemGroup>
         <AndroidResource Include="Resources\Drawable\add.png" />
         <AndroidResource Include="Resources\Drawable\add.svg" />
+        <AndroidResource Include="Resources\Drawable\back.png" />
+        <AndroidResource Include="Resources\Drawable\params.png" />
         <AndroidResource Include="Resources\Drawable\ventilateur.png" />
         <AndroidResource Include="Resources\Drawable\ventilateuron.png" />
         <AndroidResource Include="Resources\layout\Tabbar.axml"/>

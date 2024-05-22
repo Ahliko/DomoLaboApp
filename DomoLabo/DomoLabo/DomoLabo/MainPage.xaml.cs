@@ -36,6 +36,8 @@ namespace DomoLabo
                 }
                 else
                 {
+                    
+                    title.Text = test.Children.Count + " objets dans la pièce";
                     MessagingCenter.Subscribe<ObjectListWidget, Objet>(this, "Hi", async (sender, arg) =>
                     {
                         MessagingCenter.Unsubscribe<ObjectListWidget, Objet>(this, "Hi");
@@ -49,6 +51,8 @@ namespace DomoLabo
                         if (!((lastAdd - DateTime.Now).TotalSeconds <= -1)) return;
                         lastAdd = DateTime.Now;
                         AddObj(topic);
+                        
+                        title.Text = test.Children.Count + " objets dans la pièce";
                     });
                     
                     
@@ -65,6 +69,7 @@ namespace DomoLabo
                                 {
                                     test.Children.Add(objects.getView());
                                 }
+                                title.Text = test.Children.Count + " objets dans la pièce";
                             }
                             catch (Exception ex)
                             {
@@ -95,12 +100,6 @@ namespace DomoLabo
                 Debug.WriteLine(e);
                 throw;
             }
-        }
-
-
-        private void ObjectChangeState(object sender, EventArgs e)
-        {
-            /*MQTT.SendDataObject();*/
         }
 
         private async void AddObj(string topic)

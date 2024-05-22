@@ -17,9 +17,12 @@
             </Grid.ColumnDefinitions>
             <Label FontAttributes="Bold" TextColor="White">Domolabo</Label>
             <ImageButton
+                BackgroundColor="Transparent"
                 Clicked="paramsPage"
                 Grid.Column="1"
-                Source="Add" />
+                HeightRequest="30"
+                Source="params"
+                WidthRequest="30" />
         </Grid>
         <StackLayout Margin="40,80">
             <Label
@@ -30,8 +33,9 @@
             <Label
                 FontAttributes="Bold"
                 FontSize="12"
-                TextColor="DarkGray">
-                1 objet dans la pièce
+                TextColor="DarkGray"
+                x:Name="title">
+                0 objet dans la pièce
             </Label>
         </StackLayout>
         <StackLayout Margin="25,5">

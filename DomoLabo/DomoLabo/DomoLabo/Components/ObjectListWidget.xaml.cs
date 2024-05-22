@@ -22,7 +22,7 @@ public partial class ObjectListWidget : ViewCell
         this._objet = objet;
         name.Text = objet.name;
         stateIndicator.BackgroundColor =  objet.activeColor;
-        Image.Source = objet.value == "1" ? "ventilateuron.png" :"ventilateur.png";
+        Image.Source = objet.value != "0" ? "ventilateuron.png" :"ventilateur.png";
 
         objet.PropertyChanged += (sender, args) =>
         {
