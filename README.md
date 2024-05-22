@@ -35,8 +35,11 @@ git clone https://github.com/Ahliko/DomoLabo
 3. Lauch the App on your phone :<br>
 
     ➜ Active Developer mode on your phone<br>
+
     ➜ Connecte your phone to your computer<br>
+
     ➜ Select your phone on the Visual Studio interface<br> 
+
     ➜ Start the program 
  
 <br>
